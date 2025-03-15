@@ -1,6 +1,11 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Header from "./Header";
+import heart from "../assets/images/3dicons-heart-front-color.png"
+import rocket from "../assets/images/3dicons-rocket-dynamic-color.png"
+import chat from "../assets/images/3dicons-chat-bubble-dynamic-color.png"
+import mail from "../assets/images/3dicons-mail-front-color.png"
 
 const LeadForm = () => {
     const [formData, setFormData] = useState({
@@ -73,11 +78,13 @@ const LeadForm = () => {
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-black">
             <Header />
             {!submitted ? (
-                <div className="p-6 max-w-lg mx-auto mt-80 md:max-w-xl lg:max-w-xl">
+
+                <div className="p-6 max-w-lg mx-auto mt-80 md:max-w-xl lg:max-w-xl text-center">
+                    <Image src={chat} alt="Heart Icon" className="w-30 mx-auto" />
                     <h2 className="text-2xl font-bold text-center mb-4 text-black">
                         Want to understand your visa options?
                     </h2>
-                    <p className="text-gray-600 text-center mb-6">
+                    <p className="text-center mb-6 font-bold text-black">
                         Submit the form below and our team of experienced attorneys will review your information and send a preliminary assessment of your case based on your goals.
                     </p>
                     <div className="p-6 max-w-md mx-auto md:max-w-md lg:max-w-l">
@@ -88,7 +95,7 @@ const LeadForm = () => {
                                 type="text"
                                 name="firstName"
                                 placeholder="First Name"
-                                className="w-full p-2 border rounded-md"
+                                className="w-full p-2 border rounded-md border-gray-300"
                                 onChange={handleChange}
                                 required
                             />
@@ -96,7 +103,7 @@ const LeadForm = () => {
                                 type="text"
                                 name="lastName"
                                 placeholder="Last Name"
-                                className="w-full p-2 border rounded-md mt-2"
+                                className="w-full p-2 border rounded-md mt-2 border-gray-300"
                                 onChange={handleChange}
                                 required
                             />
@@ -104,7 +111,7 @@ const LeadForm = () => {
                                 type="email"
                                 name="email"
                                 placeholder="Email"
-                                className="w-full p-2 border rounded-md"
+                                className="w-full p-2 border rounded-md border-gray-300"
                                 onChange={handleChange}
                                 required
                             />
@@ -112,7 +119,7 @@ const LeadForm = () => {
                                 type="text"
                                 name="country"
                                 placeholder="Country of Citizenship"
-                                className="w-full p-2 border rounded-md"
+                                className="w-full p-2 border rounded-md border-gray-300"
                                 onChange={handleChange}
                                 required
                             />
@@ -120,14 +127,14 @@ const LeadForm = () => {
                                 type="text"
                                 name="website"
                                 placeholder="LinkedIn / Personal Website URL"
-                                className="w-full p-2 border rounded-md"
+                                className="w-full p-2 border rounded-md border-gray-300"
                                 onChange={handleChange}
                             />
                             <label
                                 htmlFor="resume"
-                                className="p-2 border rounded-md mt-2 cursor-pointer bg-gray-100 text-gray-500"
+                                className="relative top-5 px-8 py-4 border rounded-md cursor-pointer bg-gray-200 text-gray-500 border-gray-300 text-center mx-auto "
                             >
-                                {formData.resume ? formData.resume.name : "Upload Resume/ CV"}
+                                {formData.resume ? formData.resume.name : "Upload Resume / CV"}
                             </label>
                             <input
                                 type="file"
@@ -136,13 +143,13 @@ const LeadForm = () => {
                                 onChange={handleFileChange}
                                 className="hidden"
                             />
-
-                            <p className="mt-6 font-semibold">Visa categories of interest?</p>
+                            <Image src={rocket} alt="Heart Icon" className="mt-20 w-20 mx-auto" />
+                            <p className="font-semibold text-xl">Visa categories of interest?</p>
                             <div className="flex flex-col">
                                 {["O-1", "EB-1A", "EB-2 NIW", "I don't know"].map((option) => (
                                     <label key={option} className="flex items-center">
                                         <input
-                                            className="cursor-pointer mr-2"
+                                            className="cursor-pointer mr-2 border-gray-300"
                                             type="checkbox"
                                             name="visaCategory"
                                             value={option}
@@ -155,13 +162,15 @@ const LeadForm = () => {
                                                     return { ...prevData, visaCategories };
                                                 });
                                             }}
+
                                         />
                                         {option}
                                     </label>
                                 ))}
                             </div>
+                            <Image src={heart} alt="Heart Icon" className="mt-4 w-15 mx-auto" />
 
-                            <p className="mt-4 font-semibold">How can we help you?</p>
+                            <p className="mt-4 font-semibold text-xl">How can we help you?</p>
                             <textarea
                                 name="comments"
                                 placeholder="What is your current status and when does it expire?
@@ -181,7 +190,8 @@ What is your past immigration history? Are you looking for long-term permanent r
                 </div>
             ) : (
                 <div className="text-center p-6 max-w-l mx-auto md:max-w-md lg:max-w-l">
-                    <h2 className="text-xl font-bold mb-10 mt-40">Thank You!</h2>
+                    <Image src={mail} alt="Heart Icon" className="w-25 mx-auto mt-40" />
+                    <h2 className="text-xl font-bold mb-10 mt-4">Thank You!</h2>
                     <p className='font-bold mb-9'>Your information was submitted to our team of immigration attorneys. Expect an email from hello@tryalma.ai.</p>
                     <button
                         className="mt-4 bg-black text-white px-4 py-2 rounded-md cursor-pointer hover:bg-gray-800 font-bold"
