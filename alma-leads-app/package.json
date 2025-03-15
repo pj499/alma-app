@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/lato": "^5.2.5",
     "formidable": "^3.5.2",
     "material-react-table": "^3.2.1",
     "next": "^15.2.2",

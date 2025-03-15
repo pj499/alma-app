@@ -19,8 +19,8 @@ const Header = () => {
                         className="w-30 mb-10 mr-50"/>
                 </Link>
 
-                <h1 className="text-4xl font-bold text-black max-w-lg">
-                    Get An Assessment Of Your Immigration Case
+                <h1 className="text-5xl font-extrabold text-black ">
+                    Get An Assessment <br/> Of Your Immigration Case
                 </h1>
             </div>
         </div>
