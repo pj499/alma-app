@@ -7,7 +7,7 @@ export default function Home() {
     const auth = useAuth();
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center">
+        <div className="flex flex-col items-center justify-center min-h-screen text-center bg-gradient-to-b from-[#D9D9A0] via-white to-white">
             <img
                 src="https://app.ashbyhq.com/api/images/org-theme-wordmark/7d6b6dba-6b28-4a48-b58b-7178236b4ba7/5d8e748d-c0cc-4a0e-b525-94fa977689a4/59d6773a-8a4a-4d31-806d-047f8cd7885c.png"
                 alt="Logo"
