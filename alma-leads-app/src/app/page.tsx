@@ -31,7 +31,7 @@ export default function Home() {
                 ) : (
                     <button
                         onClick={auth.login}
-                        className=" px-6 py-3 bg-gray-800 text-white rounded-lg shadow-md hover:bbg-gray-700 transition
+                        className=" px-6 py-3 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-700 transition
                 cursor-pointer">
                         Internal Leads (Admin)
                     </button>
