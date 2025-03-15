@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Header from "./Header";
 
 const LeadForm = () => {
     const [formData, setFormData] = useState({
@@ -69,9 +70,10 @@ const LeadForm = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-50 text-black">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-black">
+            <Header />
             {!submitted ? (
-                <div className="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-xl md:max-w-xl lg:max-w-xl">
+                <div className="p-6 max-w-lg mx-auto mt-80 md:max-w-xl lg:max-w-xl">
                     <h2 className="text-2xl font-bold text-center mb-4 text-black">
                         Want to understand your visa options?
                     </h2>
@@ -178,11 +180,11 @@ What is your past immigration history? Are you looking for long-term permanent r
                     </div>
                 </div>
             ) : (
-                <div className="text-center p-6">
-                    <h2 className="text-xl font-bold mb-2">Thank You!</h2>
-                    <p>Your information was submitted to our team of immigration attorneys. Expect an email from hello@tryalma.ai.</p>
+                <div className="text-center p-6 max-w-l mx-auto md:max-w-md lg:max-w-l">
+                    <h2 className="text-xl font-bold mb-10 mt-40">Thank You!</h2>
+                    <p className='font-bold mb-9'>Your information was submitted to our team of immigration attorneys. Expect an email from hello@tryalma.ai.</p>
                     <button
-                        className="mt-4 bg-black text-white p-2 rounded-md cursor-pointer hover:bg-gray-800"
+                        className="mt-4 bg-black text-white px-4 py-2 rounded-md cursor-pointer hover:bg-gray-800 font-bold"
                         onClick={() => setSubmitted(false)}
                     >
                         Go Back to Homepage
