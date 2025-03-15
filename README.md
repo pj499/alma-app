@@ -4,8 +4,6 @@
 Alma Leads App is a Next.js + TypeScript application built with Tailwind CSS, Styled Components and Formidable for API handling. This guide provides instructions to set up and run the project locally.
 
 
-
-
 ## 🚀 Application Overview  
 
 After running the application, you will be greeted by a **Welcome Page** featuring the **Alma** logo and two primary navigation buttons:  
